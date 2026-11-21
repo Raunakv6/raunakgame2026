@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6e8cd">
+  <meta name="description" content="Dino Dash — a sunny, speedy desert endless runner.">
+  <title>Dino Dash — Run wild</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app" aria-label="Dino Dash game">
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Dino Dash home" id="homeLink"><span class="mark">D</span> DINO <span class="wordmark-light">DASH</span></a>
+      <div class="top-actions">
+        <span class="best-pill">BEST <strong id="topBest">00000</strong></span>
+        <button class="icon-button" id="soundButton" aria-label="Turn sound off" title="Sound on">♪</button>
+      </div>
+    </header>
+
+    <section class="game-shell" aria-label="Game area">
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="960" height="440" aria-label="Dinosaur running game. Press Space or Arrow Up to jump, Arrow Down to duck."></canvas>
+        <div class="hud" id="hud" hidden>
+          <div class="scoreboard"><span>SCORE</span><strong id="score">00000</strong></div>
+          <button class="icon-button pause-button" id="pauseButton" aria-label="Pause game" title="Pause">Ⅱ</button>
+        </div>
+        <div class="announcement" id="announcement" aria-live="polite"></div>
+
+        <section class="screen" id="menuScreen" aria-labelledby="gameTitle">
+          <div class="screen-card menu-card">
+            <div class="eyebrow"><span class="sun-dot"></span> THE DESERT IS YOURS</div>
+            <h1 id="gameTitle">DINO<br><span>DASH</span></h1>
+            <p class="lead">One little dino. One very long road.</p>
+            <button class="primary-button" id="playButton">LET’S RUN <span aria-hidden="true">↗</span></button>
+            <p class="key-hint">SPACE / ↑ to jump <i>·</i> ↓ to duck</p>
+            <div class="menu-best">PERSONAL BEST <strong id="menuBest">00000</strong></div>
+          </div>
+          <div class="menu-doodle" aria-hidden="true">✳</div>
+        </section>
+
+        <section class="screen" id="pauseScreen" aria-labelledby="pauseTitle" hidden>
+          <div class="screen-card compact-card">
+            <div class="eyebrow">TAKE A BREATHER</div>
+            <h2 id="pauseTitle">PAUSED<span>.</span></h2>
+            <p class="lead">Your adventure can wait.</p>
+            <button class="primary-button" id="resumeButton">KEEP RUNNING <span aria-hidden="true">→</span></button>
+            <div class="secondary-actions">
+              <button class="text-button" id="pauseRestartButton">Restart run</button>
+              <button class="text-button" id="pauseMenuButton">Main menu</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="overScreen" aria-labelledby="overTitle" hidden>
+          <div class="screen-card compact-card">
+            <div class="eyebrow"><span class="over-dot"></span> THAT’S A WRAP</div>
+            <h2 id="overTitle">RUN<br>OVER<span>.</span></h2>
+            <p class="lead">The desert will be here tomorrow.</p>
+            <div class="final-scores"><div><span>YOUR SCORE</span><strong id="finalScore">00000</strong></div><div><span>PERSONAL BEST</span><strong id="finalBest">00000</strong></div></div>
+            <button class="primary-button" id="restartButton">RUN IT BACK <span aria-hidden="true">↗</span></button>
+            <button class="text-button return-button" id="gameOverMenuButton">Back to main menu</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="mobile-controls" aria-label="Touch controls">
+        <button class="touch-button duck-button" id="duckButton" aria-label="Duck">DUCK <span>↓</span></button>
+        <button class="touch-button jump-button" id="jumpButton" aria-label="Jump">JUMP <span>↑</span></button>
+      </div>
+    </section>
+    <footer class="footer"><span>KEEP YOUR EYES ON THE HORIZON</span><span class="footer-right">A LITTLE GAME FOR BIG ADVENTURES <b>✳</b></span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
